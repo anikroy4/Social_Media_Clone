@@ -33,11 +33,7 @@ exports.sendEmail = (email,name, url) => {
         from: EMAIL,
         to: email,
         subject: 'AlAP Account Activation',
-        html: `<p>Hello ${name},</p>
-        <p>Click the link below to activate your account:</p>
-        <a href=${url}>${url}</a>
-        <p>This link expires in 15 minutes.</p>
-        `
+        html: ``
     };
     stmp.sendMail(mailOptions, (error, res) => {
         if (error) {
