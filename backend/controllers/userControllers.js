@@ -1,4 +1,5 @@
 const { validateEmail, validateLength, validateUsername } = require('../helpers/validation');
+const { createToken } = require('../helpers/token');
 const Users = require('../models/userModel');
 const bcrypt = require('bcrypt');
 
@@ -15,13 +16,14 @@ exports.user= async (req, res) => {
             bDay,
             gender,
             verified      
-        }   = req.body;
+        } = req.body;
 
-         if(!validateEmail(email)){
+        if(!validateEmail(email)){
             return res.status(400).json({
                 message: 'Invalid email' 
             });
         }
+        
        const checkMail = await Users.findOne({ email })
         
         if(checkMail){
@@ -66,6 +68,10 @@ exports.user= async (req, res) => {
             gender,
             verified
         }).save();
+
+        const token= createToken({ id: newUser._id.toString() }, '7d'); 
+        console.log(token);
+        
             
         res.send(newUser);
         
