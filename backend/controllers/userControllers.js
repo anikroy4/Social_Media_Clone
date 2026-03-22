@@ -2,6 +2,7 @@ const { validateEmail, validateLength, validateUsername } = require('../helpers/
 const { createToken } = require('../helpers/token');
 const Users = require('../models/userModel');
 const bcrypt = require('bcrypt');
+const { sendEmail } = require('../helpers/mailer');
 
 exports.user= async (req, res) => {
     try {
@@ -70,7 +71,9 @@ exports.user= async (req, res) => {
         }).save();
 
         const token= createToken({ id: newUser._id.toString() }, '7d'); 
-        console.log(token);
+        const url = `${process.env.BASE_URL}/activate/${token}`
+        sendEmail(email, newUser.fName, url);
+        
         
             
         res.send(newUser);
