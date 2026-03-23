@@ -72,7 +72,8 @@ exports.user= async (req, res) => {
 
         const token= createToken({ id: newUser._id.toString() }, '7d'); 
         const url = `${process.env.BASE_URL}/activate/${token}`
-        sendEmail(email, newUser.fName, url);
+        
+         sendEmail(email, newUser.fName, url);
         
         
             
