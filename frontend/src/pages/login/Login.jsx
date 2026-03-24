@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Login = () => {
@@ -8,7 +7,7 @@ const Login = () => {
       <div className="pointer-events-none absolute bottom-0 right-0 h-96 w-96 rounded-full bg-emerald-300/30 blur-3xl" />
 
       <div className="relative z-10 grid min-h-screen place-items-center px-6 py-12">
-        <div className="w-full max-w-[1880px] grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-center">
+        <div className="w-full max-w-[1880 px] grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-center">
           <section className="w-full space-y-6 text-center lg:text-left">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/70 px-4 py-1 text-sm font-semibold text-slate-600 shadow-sm">
               <span className="h-2 w-2 rounded-full bg-emerald-500" />
