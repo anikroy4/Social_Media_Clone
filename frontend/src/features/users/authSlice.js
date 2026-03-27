@@ -6,11 +6,12 @@ const initailState = {
 
 export const userSlice = createSlice({
     name: 'authUser',
-    initailState,
+    initialState: initailState,
     reducers: {
         createUser: (state, action) => {
             state.userInfo = action.payload;
         }
+
     }
 
 });

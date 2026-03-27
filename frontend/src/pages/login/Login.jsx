@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 const Login = () => {
   return (
     <div className="relative w-full mx-auto overflow-hidden bg-[#f3f5f9] text-slate-900 font-['Manrope']">
-      <div className="pointer-events-none absolute -top-32 -left-24 h-80 w-80 rounded-full bg-[#1877f2]/20 blur-3xl"  />
-      <div className="pointer-events-none absolute bottom-0 right-0 h-96 w-96 rounded-full bg-emerald-300/30 blur-3xl" />
+      <div className="pointer-events-none absolute -top-32 -left-24 h-80 w-80 rounded-full bg-[#1877f2]/20 blur-3xl"/>
+      <div className="pointer-events-none absolute bottom-0 right-0 h-96 w-96 rounded-full bg-emerald-300/30 blur-3xl"/>
 
       <div className="relative z-10 grid min-h-screen place-items-center px-6 py-12">
         <div className="w-full max-w-[1880 px] grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-center">
