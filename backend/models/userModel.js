@@ -15,14 +15,13 @@ const userModel = new Schema(
             required:true,
             trim: true,
             text :true
-        }
-        ,
+        },
         username:{
             type:String,
             required:true,
             trim: true,
+            unique:true ,
             text :true,
-            unique:true 
         },
         email:{
             type:String,
@@ -32,7 +31,6 @@ const userModel = new Schema(
         password:{
             type:String,
             required:true,
-    
         },
         profilePicture:{
             type:String,
@@ -67,7 +65,6 @@ const userModel = new Schema(
                 type:ObjectId,
                 ref:"usermodel", 
             }
-  
         ],
         followers:[
             {
@@ -97,61 +94,62 @@ const userModel = new Schema(
                     text:true,
                 },
                 createdAt:{
-                    type:Date,
+                    type: Date,
                     required:true,
                 
                 }
             } 
         ],
-        details:{
-            bio:{
-                type:String,
-
-            },
-            otherName:{
-                type:String,                
-            },
-            job:{
-                type:String,            
-            },
-            workplace:{
-                type:String,
-            },
-            highSchool:{
-                type:String,
-            },
-            college:{
-                type:String,
-            },
-            currentCity:{
-                type:String,    
-            },
-            hometown:{
-                type:String,        
-                },  
-            relationship:{
-                type:String,
-                enum:["Single","In a relationship","It's Complicated","Married","Divorced"],
-            },
-            instagram:{
-                type:String,
-            }   
-        },
-        savedpost:[
+        details:
             {
-                post:{ 
-                    type:ObjectId,
-                    ref:"post",
-                },      
-                savedAt:{
-                    type:Date,
-                    required:true,
+                bio:{
+                    type:String,
+
+                },
+                otherName:{
+                    type:String,                
+                },
+                job:{
+                type:String,            
+                },
+                workplace:{
+                    type:String,
+                },
+                highSchool:{
+                    type:String,
+                },
+                college:{
+                    type:String,
+                },
+                currentCity:{
+                    type:String,    
+                },
+                hometown:{
+                    type:String,        
+                    },  
+                relationship:{
+                    type:String,
+                    enum:["Single","In a relationship","It's Complicated","Married","Divorced"],
+                },
+                instagram:{
+                    type:String,
+                }   
+            },
+            savedpost:[
+                {
+                    post:{ 
+                        type:ObjectId,
+                        ref:"post",
+                    },      
+                    savedAt:{
+                        type:Date,
+                        required:true,
+                    }
                 }
-            }
-        ]
-    },
-    {
-        timestamps:true
-    }
+            ]
+        },
+        {
+            timestamps:true
+        }
 )
-module.exports = mongoose.model("usermodel",userModel)
+module.exports = mongoose.model('usermodel',userModel);

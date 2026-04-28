@@ -7,7 +7,7 @@ exports.validateEmail = (email) => {
     return String(email).toLowerCase().match(re);  
 }
 
-exports.validateLength =  (text, minLength, maxLength) => {
+exports.validateLength = (text, minLength, maxLength) => {
     if (text.length < minLength || text.length > maxLength) {
         return false;
     }else{
@@ -32,5 +32,5 @@ exports.validateUsername = async(username)=>{
 
     }while(isTrue);
     
-        return username;
+    return username;
 }

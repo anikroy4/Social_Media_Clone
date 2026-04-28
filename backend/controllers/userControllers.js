@@ -56,14 +56,14 @@ exports.user= async (req, res) => {
 
             //validate username
             let tempUsername = fName + lName;
-            let newUsername = await validateUsername(tempUsername);
+            let newUserName = await validateUsername(tempUsername);
 
 
         const newUser = await new Users({
             fName,
             lName,
             email,
-            username: newUsername,
+            username: newUserName,
             password: encryptedPassword,
             bMonth,
             bYear,
